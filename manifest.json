@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Work Manager",
+    "description": "Extension that help you with improving your work system",
+    "version": "1.0",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "base-icon.png"
+    }
+}
