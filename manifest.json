@@ -3,8 +3,13 @@
     "name": "Work Manager",
     "description": "Extension that help you with improving your work system",
     "version": "1.0",
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": "base-icon.png"
+    "side_panel": {
+      "default_path": "popup.html"
+    },
+    "permissions": [
+      "sidePanel"
+    ],
+    "icons": {
+      "16": "base-icon.png"
     }
 }

@@ -9,6 +9,10 @@
 npm-debug.log
 yarn-error.log
 
+# next.js
+/.next/
+/out/
+
 # IDEs and editors
 .idea/
 .project
