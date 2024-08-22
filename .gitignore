@@ -9,10 +9,6 @@
 npm-debug.log
 yarn-error.log
 
-# next.js
-/.next/
-/out/
-
 # IDEs and editors
 .idea/
 .project
@@ -21,13 +17,10 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
+.editorconfig
 
 # Visual Studio Code
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 .history/*
 
 # Miscellaneous
