@@ -1,0 +1,35 @@
+@import 'variables';
+
+nav {
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    padding: 8px;
+    border-radius: 0 0 16px 16px;
+    background-color: $navbar-color;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        text-decoration: none;
+
+        mat-icon {
+            margin: 0;
+            font-size: 24px;
+            height: 24px;
+            width: 24px;
+        }
+
+        .nav-label {
+            margin-top: 4px;
+            font-size: 10px;
+        }
+    }
+
+    .active-link {
+        background-color: rgb(180, 222, 250);
+    }
+}

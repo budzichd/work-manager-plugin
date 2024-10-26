@@ -4,7 +4,8 @@
     "description": "Extension that help you with improving your work system",
     "version": "1.0",
     "side_panel": {
-      "default_path": "index.html"
+      "default_path": "index.html",
+      "openPanelOnActionClick": true
     },
     "permissions": [
       "sidePanel"

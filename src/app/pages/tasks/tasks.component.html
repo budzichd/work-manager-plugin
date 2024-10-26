@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<!-- progress of tasks -->
+<div class="tasks-container">
+  <h3>Overdue</h3>
+  <h3>Today</h3>
+  <div class="tasks-list">
+    @for (task of tasks(); track task.title) {
+      <div>
+        <mat-checkbox
+          class="example-margin"
+          (change)="completeTask(task)"
+        >
+          {{task.title}}
+        </mat-checkbox>
+      </div>
+    }
+  </div>
+
+
+  <h3>Upcoming</h3>
+</div>
+
+<app-new-task (taskCreated)="createTask($event)"></app-new-task>

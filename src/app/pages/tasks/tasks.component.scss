@@ -1,0 +1,21 @@
+:host {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.tasks-container {
+    display: block;
+    padding: 0 16px;
+    flex-grow: 1;
+}
+
+app-new-task {
+    border-top: 1px solid grey;
+    padding: 16px;
+}
+
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+}
