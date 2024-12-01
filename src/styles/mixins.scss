@@ -1,0 +1,16 @@
+@import 'variables.scss';
+
+@mixin breakpoint($point) {
+    @if $point == s {
+      @media (min-width: $ml-screen) { @content; }
+    }
+    @else if $point == m {
+      @media (min-width: $tablet-screen) { @content; }
+    }
+    @else if $point == l {
+      @media (min-width: $desktop-screen)  { @content; }
+    }
+    @else if $point == xl {
+        @media (min-width: $desktop-wide-screen)  { @content; }
+    }
+}

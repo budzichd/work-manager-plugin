@@ -1,14 +1,12 @@
-<app-navbar></app-navbar>
+<app-navbar class="header"></app-navbar>
 <!-- progress of tasks -->
-<div class="tasks-view-container">
-  <h3>Your tasks</h3>
-  <div class="tasks-count-container">
-    <span class="pill-container"><span class="pill-text">Overdue</span><span class="pill">2</span></span>
-    <span class="pill-container"><span class="pill-text">Open</span><span class="pill">5</span></span>
-    <span class="pill-container"><span class="pill-text">Upcoming</span><span class="pill">15</span></span>
-    <span class="pill-container"><span class="pill-text">Closed</span><span class="pill">1</span></span>
-  </div>
+<div class="content">
+  <h3>Tasks</h3>
   <div class="tasks-list">
+    <button class="new-task-btn" nz-button nzType="default">
+      <span nz-icon nzType="plus-square" nzTheme="outline"></span>
+      <span class="btn-text">Create new task</span>
+    </button>
     @for (task of tasks(); track task.title) {
       <div class="task-container">
         <div class="task-body">
@@ -21,5 +19,5 @@
     }
   </div>
 </div>
-
-<app-new-task-collapsable (taskCreated)="createTask($event)"></app-new-task-collapsable>
+<!-- 
+<app-new-task-collapsable class="footer" (taskCreated)="createTask($event)"></app-new-task-collapsable> -->

@@ -1,18 +1,50 @@
+@import 'mixins';
+
 :host {
-    display: flex;
+    display: grid;
     height: 100%;
-    flex-direction: column;
+    width: 100%;
+    column-gap: 16px;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer";
+    grid-template-rows: 50px 1fr auto;
 }
 
-.tasks-view-container {
-    display: block;
+.header {
+    grid-area: header;
+    padding: 0 16px;
+
+    @include breakpoint('l') { padding: 0 32px; }
+}
+
+.content {
+    grid-area: content;
     padding: 16px;
+
+    @include breakpoint('l') { padding: 16px 32px; }
+
+    display: block;
     flex-grow: 1;
 }
 
-app-new-task {
-    border-top: 1px solid grey;
-    padding: 16px;
+.footer {
+    grid-area: footer;
+    padding: 0 16px;
+
+    @include breakpoint('l') { padding: 0 32px; }
+}
+
+.new-task-btn {
+    text-align: left;
+    color: #2998E7;
+    border-color: #2998E7;
+    border-radius: 4px;
+
+    .btn-text {
+        color: $font-primary;
+    }
 }
 
 .tasks-list {

@@ -1,6 +1,19 @@
-/** colors */
+/* colors */
 
 $primary-color: rgb(176, 208, 235);
 $secondary-color: rgb(240, 240, 240);
 
-$font-primary: rgb(27, 27, 27);
+$font-primary: rgb(51, 51, 51);
+
+
+/* breakpoints */
+
+/* mobile landscape */
+$ml-screen: 480px;
+/* tablet */
+$tablet-screen: 768px;
+/* desktop */
+$desktop-screen: 1024px;
+/* desktop wide */
+$desktop-wide-screen: 1440px;
+

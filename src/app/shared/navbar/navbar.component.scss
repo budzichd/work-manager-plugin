@@ -5,10 +5,12 @@
     display: flex;
     padding: 16px;
     background-color: $secondary-color;
+    box-shadow: 1px 1px 3px 0 #00000025;
 
     h1 {
         margin: 0;
         font-size: 20px;
+        color: $font-primary;
     }
 }
 
@@ -17,6 +19,7 @@ nav {
     justify-content: space-evenly;
     display: flex;
     margin-left: auto;
+    gap: 8px;
 
     a {
         display: flex;
@@ -24,7 +27,9 @@ nav {
         align-items: center;
         height: 100%;
         text-decoration: none;
-        line-height: 24px;
+        padding: 4px;
+        color: $font-primary;
+        opacity: 0.5;
 
         [nz-icon] {
             margin: 0;
@@ -36,11 +41,12 @@ nav {
 
         .nav-label {
             margin: 0;
-            font-size: 10px;
+            font-size: 14px;
         }
     }
 
-    // .active-link {
-    //     // background-color: rgb(180, 222, 250);
-    // }
+    .active-link {
+        border-bottom: 1px solid $font-primary;
+        opacity: 1;
+    }
 }

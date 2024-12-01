@@ -1,10 +1,7 @@
-<div class="header-section">
-  <span class="new-task-title">Add new task</span>
-</div>
 <div class="body-section">
   <form class="new-task-form" [formGroup]="taskForm">
 
-    <input #titleInput autofocus formControlName="title" placeholder="Task title" (keyup.enter)="createTask()" />
+    <input #titleInput autofocus formControlName="title" placeholder="New task title" (keyup.enter)="createTask()" />
     <textarea class="description-input" formControlName="description" [nzAutosize]="{ minRows: 1, maxRows: 8 }" placeholder="Add short description..."></textarea>
 
     <nz-date-picker nzPlaceHolder="Due to"></nz-date-picker>
