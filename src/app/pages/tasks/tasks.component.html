@@ -1,23 +1,25 @@
 <app-navbar></app-navbar>
 <!-- progress of tasks -->
-<div class="tasks-container">
-  <h3>Overdue</h3>
-  <h3>Today</h3>
+<div class="tasks-view-container">
+  <h3>Your tasks</h3>
+  <div class="tasks-count-container">
+    <span class="pill-container"><span class="pill-text">Overdue</span><span class="pill">2</span></span>
+    <span class="pill-container"><span class="pill-text">Open</span><span class="pill">5</span></span>
+    <span class="pill-container"><span class="pill-text">Upcoming</span><span class="pill">15</span></span>
+    <span class="pill-container"><span class="pill-text">Closed</span><span class="pill">1</span></span>
+  </div>
   <div class="tasks-list">
     @for (task of tasks(); track task.title) {
-      <div>
-        <mat-checkbox
-          class="example-margin"
-          (change)="completeTask(task)"
-        >
-          {{task.title}}
-        </mat-checkbox>
+      <div class="task-container">
+        <div class="task-body">
+          <label nz-checkbox (nzCheckedChange)="completeTask(task)">{{task.title}}</label>
+        </div>
+        <div class="task-footer">
+          
+        </div>
       </div>
     }
   </div>
-
-
-  <h3>Upcoming</h3>
 </div>
 
-<app-new-task (taskCreated)="createTask($event)"></app-new-task>
+<app-new-task-collapsable (taskCreated)="createTask($event)"></app-new-task-collapsable>

@@ -7,6 +7,12 @@
       "default_path": "index.html",
       "openPanelOnActionClick": true
     },
+    "background": {
+      "service_worker": "service-worker.js"
+    },
+    "action": {
+      "default_title": "Click to open panel"
+    },
     "permissions": [
       "sidePanel"
     ],

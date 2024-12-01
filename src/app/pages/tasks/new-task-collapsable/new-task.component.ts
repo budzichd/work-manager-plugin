@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import {
 	FormControl,
 	FormGroup,
@@ -12,10 +12,10 @@ import { NzButtonComponent } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzAutosizeDirective, NzInputModule } from 'ng-zorro-antd/input';
 import { NzDatePickerComponent } from 'ng-zorro-antd/date-picker';
-import { NzModalModule, NzModalRef } from 'ng-zorro-antd/modal';
+import { Task } from '../types';
 
 @Component({
-	selector: 'app-new-task',
+	selector: 'app-new-task-collapsable',
 	standalone: true,
 	imports: [
 		ReactiveFormsModule,
@@ -26,13 +26,14 @@ import { NzModalModule, NzModalRef } from 'ng-zorro-antd/modal';
 		NzFormModule,
 		NzDatePickerComponent,
 		NzInputModule,
-		NzModalModule,
 	],
 	templateUrl: './new-task.component.html',
 	styleUrl: './new-task.component.scss',
 })
-export class NewTaskComponent {
+export class NewTaskCollapsableComponent {
 	@ViewChild(FormGroupDirective) formGroup!: FormGroupDirective;
+	@ViewChild('titleInput') titleInput: ElementRef;
+	@Output() taskCreated = new EventEmitter<Task>();
 
 	taskForm = new FormGroup({
 		title: new FormControl('', { validators: [Validators.required], nonNullable: true }),
@@ -40,13 +41,15 @@ export class NewTaskComponent {
 		dueToDate: new FormControl(null),
 	});
 
-	constructor(private modal: NzModalRef) {}
-
 	createTask() {
-		this.modal.destroy(this.taskForm.getRawValue());
+		// this.titleInput.nativeElement.focus()
+		if (this.taskForm.controls.title.value) {
+			this.taskCreated.emit(this.taskForm.getRawValue());
+			this.taskForm.reset();
+		}
 	}
 
-	closeDialog() {
-		this.modal.destroy();
+	resetForm() {
+		this.taskForm.reset();
 	}
 }

@@ -4,9 +4,9 @@
     flex-direction: column;
 }
 
-.tasks-container {
+.tasks-view-container {
     display: block;
-    padding: 0 16px;
+    padding: 16px;
     flex-grow: 1;
 }
 
@@ -18,4 +18,24 @@ app-new-task {
 .tasks-list {
     display: flex;
     flex-direction: column;
+}
+
+.tasks-count-container {
+    display: flex;
+    max-width: 500px;
+    justify-content: space-between;
+}
+
+.pill {
+    background-color: rgb(80, 150, 255);
+    font-size: 12px;
+    color: white;
+    margin-left: 5px;
+    padding: 3px 5px;
+    border-radius: 50px;
+}
+
+.pill-text {
+    font-weight: 500;
+    color: #a2a2a2;
 }

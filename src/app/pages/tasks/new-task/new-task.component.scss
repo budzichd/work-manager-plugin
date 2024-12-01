@@ -1,12 +1,6 @@
-@use '@angular/material' as mat;
 
 :host {
     display: block;
-}
-
-.form-container {
-    display: flex;
-    flex-direction: column;
 }
 
 .form-actions {
@@ -16,12 +10,4 @@
 .form-title {
     margin-bottom: 16px;
     font-size: 14px;
-}
-
-mat-label {
-    font-size: 12px;
-}
-
-mat-form-field {
-    @include mat.all-component-densities(-4);
 }

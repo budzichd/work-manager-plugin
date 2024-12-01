@@ -1,19 +1,27 @@
-<form class="form-container" [formGroup]="taskForm" (ngSubmit)="submitTask()">
-    <legend class="form-title">Add new task</legend>
-    <mat-form-field hideRequiredMarker="true" appearance="outline">
-      <mat-label>Title</mat-label>
-      <input matInput formControlName="title">
-    </mat-form-field>
-
-    <mat-form-field hideRequiredMarker="true" appearance="outline">
-        <mat-label>Description</mat-label>
-        <textarea matInput formControlName="description"></textarea>
-      </mat-form-field>
-
-    <div class="form-actions">
-        <button mat-button class="button" type="submit">
-            <mat-icon>add</mat-icon>
-            <span class="nav-label">Add</span>
-        </button>
-    </div>
+<form nz-form nzLayout="vertical" [formGroup]="taskForm">
+  <nz-form-item>
+    <nz-form-label nzFor="title">Title</nz-form-label>
+    <nz-form-control>
+      <input id="title" nz-input formControlName="title" placeholder="Title" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label>Description</nz-form-label>
+    <nz-form-control>
+      <textarea formControlName="description" nz-input [nzAutosize]="{ minRows: 8, maxRows: 8 }" placeholder="Description"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label>Due date</nz-form-label>
+    <nz-form-control>
+      <nz-date-picker></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
 </form>
+<div *nzModalFooter>
+  <button nz-button nzType="default" (click)="closeDialog()">Cancel</button>
+  <button nz-button nzType="primary" type="button" (click)="createTask()">
+    <span nz-icon nzType="plus"></span>
+    Create
+  </button>
+</div>

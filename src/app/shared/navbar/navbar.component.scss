@@ -1,35 +1,46 @@
 @import 'variables';
 
+:host {
+    align-items: center;
+    display: flex;
+    padding: 16px;
+    background-color: $secondary-color;
+
+    h1 {
+        margin: 0;
+        font-size: 20px;
+    }
+}
+
 nav {
     align-items: center;
     justify-content: space-evenly;
     display: flex;
-    padding: 8px;
-    border-radius: 0 0 16px 16px;
-    background-color: $navbar-color;
+    margin-left: auto;
 
     a {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 50px;
+        height: 100%;
         text-decoration: none;
+        line-height: 24px;
 
-        mat-icon {
+        [nz-icon] {
             margin: 0;
             font-size: 24px;
             height: 24px;
             width: 24px;
+            margin-right: 4px;
         }
 
         .nav-label {
-            margin-top: 4px;
+            margin: 0;
             font-size: 10px;
         }
     }
 
-    .active-link {
-        background-color: rgb(180, 222, 250);
-    }
+    // .active-link {
+    //     // background-color: rgb(180, 222, 250);
+    // }
 }
