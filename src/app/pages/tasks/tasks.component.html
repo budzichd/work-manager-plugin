@@ -3,21 +3,14 @@
 <div class="content">
   <h3>Tasks</h3>
   <div class="tasks-list">
-    <button class="new-task-btn" nz-button nzType="default">
-      <span nz-icon nzType="plus-square" nzTheme="outline"></span>
+    <button class="new-task-btn" nz-button nzType="default" (click)="showCreateTaskForm()">
+      <span class="btn-icon" nz-icon nzType="plus-square" nzTheme="outline"></span>
       <span class="btn-text">Create new task</span>
     </button>
-    @for (task of tasks(); track task.title) {
+    @for (task of tasksService.tasks(); track task.id) {
       <div class="task-container">
-        <div class="task-body">
-          <label nz-checkbox (nzCheckedChange)="completeTask(task)">{{task.title}}</label>
-        </div>
-        <div class="task-footer">
-          
-        </div>
+        <label nz-checkbox (nzCheckedChange)="completeTask(task)">{{task.title}}</label>
       </div>
     }
   </div>
 </div>
-<!-- 
-<app-new-task-collapsable class="footer" (taskCreated)="createTask($event)"></app-new-task-collapsable> -->

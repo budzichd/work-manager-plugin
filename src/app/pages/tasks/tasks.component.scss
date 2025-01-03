@@ -37,14 +37,35 @@
 }
 
 .new-task-btn {
+    height: 40px;
     text-align: left;
     color: #2998E7;
     border-color: #2998E7;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
 
     .btn-text {
         color: $font-primary;
     }
+
+    .btn-icon {
+        font-size: 18px;
+        height: 18px;
+    }
+}
+
+.task-container {
+    text-align: left;
+    border: 1px solid $font-primary;
+    border-radius: 4px;
+    padding: 4px 16px;
+    height: 60px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+
 }
 
 .tasks-list {

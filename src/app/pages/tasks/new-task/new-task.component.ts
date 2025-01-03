@@ -1,8 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import {
 	FormControl,
 	FormGroup,
-	FormGroupDirective,
 	FormsModule,
 	ReactiveFormsModule,
 	Validators,
@@ -31,8 +30,8 @@ import { NzModalModule, NzModalRef } from 'ng-zorro-antd/modal';
 	templateUrl: './new-task.component.html',
 	styleUrl: './new-task.component.scss',
 })
-export class NewTaskComponent {
-	@ViewChild(FormGroupDirective) formGroup!: FormGroupDirective;
+export class NewTaskComponent implements AfterViewInit {
+	@ViewChild('titleInput') titleInput: ElementRef;
 
 	taskForm = new FormGroup({
 		title: new FormControl('', { validators: [Validators.required], nonNullable: true }),
@@ -42,8 +41,16 @@ export class NewTaskComponent {
 
 	constructor(private modal: NzModalRef) {}
 
+	ngAfterViewInit(): void {
+		setTimeout(() => {
+			this.titleInput.nativeElement.focus();
+		}, 0);
+	}
+
 	createTask() {
-		this.modal.destroy(this.taskForm.getRawValue());
+		if (this.taskForm.valid) {
+			this.modal.destroy(this.taskForm.getRawValue());
+		}
 	}
 
 	closeDialog() {
